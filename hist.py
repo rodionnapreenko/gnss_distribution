@@ -1,3 +1,7 @@
+#----------------------------------------------------------------
+# Research into the law of distribution of satellite measurements 
+# Copyright (c) 2025 Andrew Budo
+#----------------------------------------------------------------
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import List, Tuple
