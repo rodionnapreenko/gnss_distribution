@@ -58,13 +58,13 @@ def main():
     bins = 20
 
     # Generate ogiva values
-    n_x_ogiva = get_values_for_ogiva(bins, 250.0, n_max)
+    n_x_ogiva = get_values_for_ogiva(bins, n_min, n_max)
     n_y_ogiva = get_ogiva(n_x_ogiva, n_mean, n_rms)
 
-    e_x_ogiva = get_values_for_ogiva(bins, e_min, 820.0)
+    e_x_ogiva = get_values_for_ogiva(bins, e_min, e_max)
     e_y_ogiva = get_ogiva(e_x_ogiva, e_mean, e_rms)
 
-    h_x_ogiva = get_values_for_ogiva(bins, 197.0, h_max)
+    h_x_ogiva = get_values_for_ogiva(bins, h_min, h_max)
     h_y_ogiva = get_ogiva(h_x_ogiva, h_mean, h_rms)
 
     # Create plots
@@ -75,22 +75,22 @@ def main():
     plt.plot(n, e, 'g.')
     plt.xlabel('north')
     plt.ylabel('east')
-    plt.xlim(250, 450)
-    plt.ylim(650, 800)
+    #plt.xlim(250, 450)
+    #plt.ylim(650, 800)
 
     plt.subplot(2, 3, 2)
     plt.plot(n, h, 'r.')
     plt.xlabel('north')
     plt.ylabel('height')
-    plt.xlim(250, 450)
-    plt.ylim(199.0, 204.5)
+    #plt.xlim(250, 450)
+    #plt.ylim(199.0, 204.5)
 
     plt.subplot(2, 3, 3)
     plt.plot(e, h, 'b.')
     plt.xlabel('east')
     plt.ylabel('height')
-    plt.xlim(650, 800)
-    plt.ylim(199.0, 204.5)
+    #plt.xlim(650, 800)
+    #plt.ylim(199.0, 204.5)
 
     # Histograms with ogiva curves
     plt.subplot(2, 3, 4)
@@ -112,7 +112,7 @@ def main():
     
     # Save the plot with incrementing number
     plot_number = 0  # You might want to manage this externally
-    plt.savefig(f'./img/anim{plot_number}.png')
+    plt.savefig(f'./img/image{plot_number}.png')
     plt.close()
     print(plot_number + 1)
 
